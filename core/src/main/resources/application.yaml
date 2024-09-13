@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: core
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: jdbc:mysql://localhost:3307/booking
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
+
+server:
+  port: 8080
