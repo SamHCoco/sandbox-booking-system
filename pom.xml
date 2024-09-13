@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>bookingapp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Booking project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -23,6 +23,8 @@
 	</developers>
 	<modules>
 		<module>core</module>
+		<module>user</module>
+		<module>booking</module>
 	</modules>
 	<scm>
 		<connection/>
