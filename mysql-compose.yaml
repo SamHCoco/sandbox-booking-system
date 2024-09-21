@@ -7,8 +7,6 @@ services:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
-      MYSQL_DATABASE: booking
+      MYSQL_DATABASE: booking_system
     ports:
       - "3307:3306"
-    volumes:
-      - ~/mysql-container-data:/var/lib/mysql

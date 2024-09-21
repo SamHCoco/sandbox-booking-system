@@ -5,13 +5,13 @@ spring:
     ansi:
       enabled: ALWAYS
   datasource:
-    url: jdbc:mysql://localhost:3307/booking
+    url: jdbc:mysql://localhost:3307/booking_system
     username: admin
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-      hibernate:
-        ddl-auto: update
+  sql:
+    init:
+      mode: always
 
 server:
   port: 8080
