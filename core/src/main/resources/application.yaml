@@ -1,6 +1,6 @@
 spring:
   application:
-    name: core
+    name: core-service
   output:
     ansi:
       enabled: ALWAYS
