@@ -15,19 +15,19 @@ import java.util.List;
 
 @Slf4j
 @RestController
-public class BookingController {
+public class AuditoriumController {
 
     private static final String VERSION_1 = "api/v1/";
-    private static final String BOOKING = "booking";
+    private static final String AUDITORIUM = "audiotorium";
 
     private AuditoriumService auditoriumService;
 
     @Autowired
-    public BookingController(AuditoriumService auditoriumService) {
+    public AuditoriumController(AuditoriumService auditoriumService) {
         this.auditoriumService = auditoriumService;
     }
 
-    @PostMapping(VERSION_1 + BOOKING)
+    @PostMapping(VERSION_1 + AUDITORIUM)
     public ResponseEntity<List<AuditoriumSize>> createAuditorium(@RequestBody AuditoriumDto auditoriumDto) {
         final List<AuditoriumSize> auditorium = auditoriumService.createAuditorium(auditoriumDto);
 

@@ -44,3 +44,6 @@ create table if not exists `seat_booking` (
     constraint fk_user_seatbooking foreign key (user_id) references user(id),
     constraint fk_event_seatbooking foreign key (event_id) references `event`(id)
 );
+
+create index idx_event_startdate on `event`(start_date);
+create index idx_event_enddate on `event`(end_date);

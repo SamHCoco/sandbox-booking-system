@@ -14,7 +14,7 @@ import lombok.*;
 @Table(name = "auditorium_size")
 public class AuditoriumSize {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long auditoriumId;
 

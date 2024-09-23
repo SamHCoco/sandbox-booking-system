@@ -1,8 +1,6 @@
 package com.samhcoco.ip.bookingapp.booking.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -14,6 +12,7 @@ import lombok.*;
 @Table(name = "seat_booking")
 public class SeatBooking {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int row;
     private int seat;
