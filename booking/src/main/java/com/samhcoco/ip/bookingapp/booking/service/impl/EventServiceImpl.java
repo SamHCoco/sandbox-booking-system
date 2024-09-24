@@ -64,7 +64,6 @@ public class EventServiceImpl implements EventService {
             return errors;
         }
 
-        // todo - fix issue with happy path failing here
         final List<Event> events =  listAllEventsBetweenDates(startDate, endDate, auditoriumId);
         if (!events.isEmpty()) {
             errors.put("start & end date",

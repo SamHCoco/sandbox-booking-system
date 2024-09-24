@@ -11,11 +11,15 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
-    List<Event> findByStartDateGreaterThanEqualAndEndDateLessThanEqualAndAuditoriumId(Date startDate,
-                                                                                      Date endDate,
-                                                                                      Long auditoriumId);
-
-    @Query(value = "SELECT * FROM `event` WHERE start_date >= :startDate AND end_date <= :endDate AND auditorium_id = :auditoriumId", nativeQuery = true)
+    @Query(value = """
+               SELECT * FROM event
+               WHERE auditorium_id = :auditoriumId
+               AND (
+                   :startDate BETWEEN start_date AND end_date
+                   OR
+                   :endDate BETWEEN start_date AND end_date
+               )
+               """, nativeQuery = true)
     List<Event> findAllEventsBetweenDates(@Param("startDate") Date startDate,
                                           @Param("endDate") Date endDate,
                                           @Param("auditoriumId") Long auditoriumId);

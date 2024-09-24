@@ -2,6 +2,8 @@
 
 Sandbox booking system project
 
+Spring Boot 3.2.9 project - requires Java 17 or above to run. 
+
 ## ER Diagram
 
 ![Booking System ER Diagram](booking_system_ER.png)
