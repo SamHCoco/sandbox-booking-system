@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Builder
 @Entity
 @Table(name = "event")
 public class Event {

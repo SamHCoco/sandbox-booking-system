@@ -63,6 +63,10 @@ public class EventServiceImpl implements EventService {
         if (!errors.isEmpty()) {
             return errors;
         }
+        if (!startDate.before(endDate)) {
+            errors.put("Start & End Date", "Event start and end dates invalid");
+            return errors;
+        }
 
         final List<Event> events =  listAllEventsBetweenDates(startDate, endDate, auditoriumId);
         if (!events.isEmpty()) {
