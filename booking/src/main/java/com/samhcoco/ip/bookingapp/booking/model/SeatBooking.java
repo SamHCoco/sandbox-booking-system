@@ -14,7 +14,10 @@ public class SeatBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "`row`")
     private int row;
+
     private int seat;
     private long auditoriumId;
     private long userId;
