@@ -36,6 +36,10 @@
 		<java.version>17</java.version>
 		<springdoc.openapi.version>2.6.0</springdoc.openapi.version>
 		<flyway.version>10.18.0</flyway.version>
+		<sonar.projectKey>booking-system</sonar.projectKey>
+		<sonar.projectName>Booking System</sonar.projectName>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>sqa_9fe72213a51636edd41049d3a5d5c9510d9dc9cd</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -98,6 +102,11 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>4.0.0.4121</version>
 			</plugin>
 		</plugins>
 	</build>

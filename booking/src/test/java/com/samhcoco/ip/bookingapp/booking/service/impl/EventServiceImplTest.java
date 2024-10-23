@@ -30,14 +30,11 @@ public class EventServiceImplTest {
     @Mock
     private EventRepository eventRepository;
 
-    @Mock
-    private AuditoriumRepository auditoriumRepository;
-
     private Event event;
 
     @BeforeEach
     public void setup() {
-        eventService = new EventServiceImpl(eventRepository, auditoriumRepository);
+        eventService = new EventServiceImpl(eventRepository);
         final Date now = new Date();
 
         event = Event.builder()
@@ -56,18 +53,6 @@ public class EventServiceImplTest {
         final Event result = eventService.createEvent(event);
         assertThat(result).isNotNull();
         verify(eventRepository).save(any());
-    }
-
-    @Test
-    public void testValidate_happyPath() {
-        when(auditoriumRepository.existsById(any())).thenReturn(true);
-        when(eventRepository.findAllEventsBetweenDates(any(), any(), any())).thenReturn(emptyList());
-
-        final Map<String, Object> errors = eventService.validate(event);
-
-        assertThat(errors).isEmpty();
-        verify(auditoriumRepository).existsById(any());
-        verify(eventRepository).findAllEventsBetweenDates(any(), any(), any());
     }
 
 }

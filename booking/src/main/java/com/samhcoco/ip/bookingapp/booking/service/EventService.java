@@ -2,8 +2,6 @@ package com.samhcoco.ip.bookingapp.booking.service;
 
 import com.samhcoco.ip.bookingapp.booking.model.Event;
 
-import java.util.Map;
-
 public interface EventService {
 
     /**
@@ -12,7 +10,5 @@ public interface EventService {
      * @return Created {@link Event}.
      */
     Event createEvent(Event event);
-
-    Map<String, Object> validate(Event event);
 
 }
