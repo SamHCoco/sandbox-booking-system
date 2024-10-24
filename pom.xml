@@ -41,8 +41,6 @@
 		<mysql.connector.version>8.0.33</mysql.connector.version>
 		<lombok.version>1.18.28</lombok.version>
 		<h2.version>2.1.214</h2.version>
-		<sonar.host.url>http://localhost:9000</sonar.host.url>
-		<sonar.login>sqa_9fe72213a51636edd41049d3a5d5c9510d9dc9cd</sonar.login>
 	</properties>
 
 	<dependencyManagement>

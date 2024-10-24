@@ -1,22 +1,18 @@
 package com.samhcoco.ip.bookingapp.booking.service.impl;
 
 import com.samhcoco.ip.bookingapp.booking.model.Event;
-import com.samhcoco.ip.bookingapp.booking.repository.AuditoriumRepository;
 import com.samhcoco.ip.bookingapp.booking.repository.EventRepository;
 import com.samhcoco.ip.bookingapp.booking.service.EventService;
 import org.apache.commons.lang3.time.DateUtils;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Collections;
 import java.util.Date;
-import java.util.Map;
 
-import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
