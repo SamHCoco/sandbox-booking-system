@@ -19,7 +19,7 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RestController
 public class EventController {
 
-    private static final String VERSION_1 = "api/v1/";
+    private static final String VERSION_1 = "api/v1";
     private static final String EVENT = "event";
 
     private EventService eventService;
@@ -32,7 +32,7 @@ public class EventController {
         this.eventValidatorService = eventValidatorService;
     }
 
-    @PostMapping(VERSION_1 + EVENT)
+    @PostMapping(VERSION_1 + "/" + EVENT)
     public ResponseEntity<Object> createEvent(@RequestBody Event event) {
         final Map<String, Object> errors = eventValidatorService.validate(event);
 

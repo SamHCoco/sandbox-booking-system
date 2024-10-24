@@ -17,8 +17,8 @@ import java.util.List;
 @RestController
 public class AuditoriumController {
 
-    private static final String VERSION_1 = "api/v1/";
-    private static final String AUDITORIUM = "audiotorium";
+    private static final String VERSION_1 = "api/v1";
+    private static final String AUDITORIUM = "auditorium";
 
     private AuditoriumService auditoriumService;
 
@@ -27,13 +27,12 @@ public class AuditoriumController {
         this.auditoriumService = auditoriumService;
     }
 
-    @PostMapping(VERSION_1 + AUDITORIUM)
+    @PostMapping(VERSION_1 + "/" + AUDITORIUM)
     public ResponseEntity<List<AuditoriumSize>> createAuditorium(@RequestBody AuditoriumDto auditoriumDto) {
         final List<AuditoriumSize> auditorium = auditoriumService.createAuditorium(auditoriumDto);
 
         log.info("Auditorium '{}' successfully created, with seating: {}", auditoriumDto.getName(), auditorium);
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                             .body(auditorium);
+        return ResponseEntity.status(HttpStatus.CREATED).body(auditorium);
     }
 }
